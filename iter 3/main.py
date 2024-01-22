@@ -1,9 +1,9 @@
 from database.conn_db import connect_to_database
 
 from database.create_db import create_tables
-# from database.load_data import load_data_into_country_info, load_data_into_inflation_data
+from database.load_data import load_data_into_country_info, load_data_into_inflation_data
 
-from database.load_data import load_data_from_csv
+# from database.load_data import load_data_from_csv
 
 from auth.authenticate import auth_user 
 
@@ -26,8 +26,8 @@ def main():
     print(create_tables(conn))
     # print(load_data_from_csv(conn, 'D:/ProjectFiles/ProjectZero/InflatioInsight/database/inflation-gdp.csv', 'CountryInfo'))
     # print(load_data_from_csv(conn, 'D:/ProjectFiles/ProjectZero/InflatioInsight/database/inflation-gdp.csv', 'InflationData'))
-    # print(load_data_into_country_info(conn))
-    # print(load_data_into_inflation_data(conn))
+    print(load_data_into_country_info(conn))
+    print(load_data_into_inflation_data(conn))
 
     # Authenticate user
     user_credentials = auth_user(conn)

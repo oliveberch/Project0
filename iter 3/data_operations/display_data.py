@@ -23,8 +23,6 @@ def display_year_for_country(conn, country):
     try:
         cursor = conn.cursor()
 
-        country = input("Enter country name: ")
-
         cursor.execute('SELECT DISTINCT year FROM CountryInfo WHERE country = %s',(country))
         
         # Fetch all rows
